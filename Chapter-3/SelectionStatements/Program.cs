@@ -1,4 +1,6 @@
-﻿#region if-else Statements
+﻿using SelectionStatements;
+
+#region if-else Statements
 string password = "Demon";
 
 if(password.Length < 8){
@@ -50,5 +52,36 @@ WriteLine($"After A_label");
 #endregion
 
 #region Pattern Matching with the switch statement
+var animals = new Animal?[]{
+    new Cat {Name = "Karen", Born = new(year: 2022, month: 8, day: 23), Legs = 4, IsDomestic = true},
+    null,
+    new Cat {Name = "Mufasa", Born = new(year:1994, month: 8, day:12), IsDomestic = true},
+    new Spider {Name = "Sid Vicious", Born=DateTime.Today, IsPoisonous=true},
+    new Spider {Name = "Captain Furry", Born = DateTime.Today}
+};
 
+foreach (Animal? animal in animals){
+    string message;
+    switch(animal){
+        case Cat {Legs: 4} fourLeggedCat:
+            message = $"The cat Named {fourLeggedCat.Name} has four legs";
+            break;
+        case Cat {IsDomestic: true} wildCat:
+            message = $"The non-domestic cat is named {wildCat.Name}.";
+            break;
+        case Cat cat:
+            message = $"The cat is named {cat.Name}.";
+            break;
+        default: //default is always evaluated Last.
+            message = $"{animal.Name} is a {animal.GetType().Name}.";
+            break;
+        case Spider spider when spider.IsPoisonous:
+            message = $"The {spider.Name} spider is poisonous. Run!";
+            break;
+        case null:
+            message = "The animal is null.";
+            break;
+    }
+    WriteLine($"switch statement: {message}");
+}
 #endregion
