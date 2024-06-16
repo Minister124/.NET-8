@@ -59,3 +59,20 @@ WriteLine($"XOR | r | q ");
 WriteLine($"p | {q ^ r,-5} | {r ^ q,-5} ");
 WriteLine($"q | {q ^ r,-5} | {q ^ q,-5} ");
 #endregion
+
+#region Exploring conditional logical operators
+static bool DoStuff(){
+    WriteLine("I am doing some stuff.");
+    return true;
+}
+WriteLine();
+//Note that DoStuff() returns true.
+WriteLine($"r & DoStuff() = {r & DoStuff()}");
+WriteLine($"q & DoStuff() = {q & DoStuff()}");
+WriteLine();
+WriteLine($"r && DoStuff() = {r && DoStuff()}"); 
+WriteLine($"q && DoStuff() = {q && DoStuff()}");
+#endregion
+
+#region  Exploring bitwise and binary shift operators
+#endregion
