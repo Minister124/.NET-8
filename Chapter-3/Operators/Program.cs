@@ -17,3 +17,45 @@ WriteLine($"e * f = {e * f}");
 WriteLine($"e / f = {e / f}");
 WriteLine($"e % f = {e % f}");
 #endregion
+
+#region difference between whole number and real number divisions
+double g = 12.0;
+WriteLine($"g is {g:N1}, f is {f}");
+WriteLine($"g / f = {g / f}");
+#endregion
+
+#region Assignment Operators
+int p = 10;
+p += 3; //Equivalent to: p = p+3;
+p -= 3; //Equivalent to: p = p-3;
+p *= 3; //Equivalent to: p = p*3;
+p /= 3; //Equivalent to: p = p/3;
+#endregion
+
+#region Null-cpalescing operators
+//string? someoneName = ReadLine();
+
+// The maxLength variable will be the length of someoneName if it is 
+// not null, or 30 if someoneName is null.
+//int maxLength = someoneName?.Length ?? 40;
+
+//The SomeoneName Variable will be "Unknown" if someoneName was null.
+
+//someoneName ??= "Unknown";
+#endregion
+
+#region Exploring Logical Operators
+bool r = true;
+bool q = false;
+WriteLine($"AND | r | q ");
+WriteLine($"p | {r & r,-5} | {r & q,-5} ");
+WriteLine($"q | {q & r,-5} | {q & q,-5} ");
+WriteLine();
+WriteLine($"OR | r | q ");
+WriteLine($"p | {r | r,-5} | {r | q,-5} ");
+WriteLine($"q | {q | r,-5} | {q | q,-5} ");
+WriteLine();
+WriteLine($"XOR | r | q ");
+WriteLine($"p | {q ^ r,-5} | {r ^ q,-5} ");
+WriteLine($"q | {q ^ r,-5} | {q ^ q,-5} ");
+#endregion
