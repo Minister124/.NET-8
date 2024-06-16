@@ -5,3 +5,24 @@ while (x < 10){
     x++;
 };
 #endregion
+
+#region Looping with do Statement
+string? actualPassword = "Password";
+string? password;
+
+do{
+    Write("Enter your password: ");
+    password = ReadLine();
+}
+while(password != actualPassword);
+WriteLine("Correct!");
+#endregion
+
+#region Looping with for statement
+for (int y = 0; y < 10; y++){
+    WriteLine("y");
+}
+for (int y = 0; y <= 10; y += 3){
+    WriteLine("y");
+}
+#endregion 
