@@ -6,7 +6,7 @@ while (x < 10){
 };
 #endregion
 
-#region Looping with do Statement
+//#region Looping with do Statement
 string? actualPassword = "Password";
 string? password;
 
@@ -26,3 +26,10 @@ for (int y = 0; y <= 10; y += 3){
     WriteLine("y");
 }
 #endregion 
+
+#region Looping with foreach statement
+string[] names = {"Adam", "Chindey", "Motey"};
+foreach (string name in names){
+    WriteLine($"{name} has {name.Length} characters.");
+}
+#endregion
