@@ -57,4 +57,9 @@ for(int arr = 0; arr <= jagged.GetUpperBound(0); arr++){
     arg1: jagged[arr].GetUpperBound(0));
 }
 
+for(int row = 0; row <= jagged.GetUpperBound(0); row++){
+    for(int col = 0; col <= jagged[row].GetUpperBound(0); col++){
+        WriteLine($"Row {row}, Column {col}: {jagged[row][col]}");
+    }
+}
 #endregion
