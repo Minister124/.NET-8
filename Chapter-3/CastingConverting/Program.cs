@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿#region Casting numbers Implicitly and Explicitly
+int a = 10;
+double x = a;
+WriteLine($"a is {a} and x is {x}");
+
+double y = 10;
+//int v = y; As we know, double is a type which has larger range then Int. So, we are telling that we are aware of potential data loss.
+int v = (int)y; //Explicit type casting.
+#endregion
