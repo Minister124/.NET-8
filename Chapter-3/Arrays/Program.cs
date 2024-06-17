@@ -33,4 +33,28 @@ for (int row = 0; row <= grid.GetUpperBound(0); row++)
     }
 }
 
+//Alternative syntax for declarng and allocating memory
+//for a multi-dimensional array.
+string[,] grid2 = new string[3, 4];
+grid2[0,0] = "Kutta";
+grid2[0,1] = "Gadha";
+grid2[2,2] = "Yolo";
+
+#endregion
+
+#region Working with Jagged Arrays
+string[][] jagged =
+{
+    new[]{"Khatey", "Chor", "Kukur",},
+    new[]{"Maila", "Saila", "Kaila", "Antarey", "Jantarey", "Lakhantarey"},
+    new[]{"Bau", "Xora", "Aamai", "Dajai"}
+};
+WriteLine("Upper bound of the array of arrays is: {0}", jagged.GetUpperBound(0));
+
+for(int arr = 0; arr <= jagged.GetUpperBound(0); arr++){
+    WriteLine("Upper bound of array {0} is {1}", 
+    arg0: arr, 
+    arg1: jagged[arr].GetUpperBound(0));
+}
+
 #endregion
