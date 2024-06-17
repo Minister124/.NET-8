@@ -63,3 +63,6 @@ for(int row = 0; row <= jagged.GetUpperBound(0); row++){
     }
 }
 #endregion
+
+#region List Pattern Matching with arrays
+#endregion
