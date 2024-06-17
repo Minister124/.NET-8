@@ -1,4 +1,6 @@
-﻿#region Casting numbers Implicitly and Explicitly
+﻿using static System.Convert; //To use Int32
+
+#region Casting numbers Implicitly and Explicitly
 int a = 10;
 double x = a;
 WriteLine($"a is {a} and x is {x}");
@@ -48,4 +50,37 @@ WriteLine("{0, 12} {0, 32:B32}", int.MinValue);
 */ /*All the positive binary number representations start with 0 and all the negative binary number representations start with 1. 
 The decimal value -1 is represented by all ones in binary.
 That is why when you have an integer too large to fit in a 32-bit integer, it becomes -1.*/
+#endregion
+
+#region Converting with System.Convert
+double g = 10.95;
+int c = ToInt32(g);
+WriteLine($"g is {g}, c is {c}");
+
+/*An important difference between casting and converting is that converting rounds the 
+double value 9.8 up to 10 instead of trimming the part after the decimal point. Another 
+is that casting can allow overflows while converting will throw an exception.
+*/
+#endregion
+
+#region Rounding Numbers and the default rounding rules
+double[,] doubles = {
+ { 9.49, 9.5, 9.51 },
+ { 10.49, 10.5, 10.51 },
+ { 11.49, 11.5, 11.51 },
+ { 12.49, 12.5, 12.51 } ,
+ { -12.49, -12.5, -12.51 },
+ { -11.49, -11.5, -11.51 },
+ { -10.49, -10.5, -10.51 },
+ { -9.49, -9.5, -9.51 }
+};
+WriteLine($"| double | ToInt32 | double | ToInt32 | double | ToInt32 |");
+for (int i = 0; i < 8; i++){
+    for (int j = 0; j < 3; j++)
+    {
+        Write($"| {doubles[i, j],6} | {ToInt32(doubles[i, j]),7} ");
+    }
+    WriteLine("|");
+}
+WriteLine();
 #endregion
