@@ -25,9 +25,9 @@ WriteLine($"1st dimension, upper bound: {grid.GetUpperBound(0)}");
 WriteLine($"2nd dimension, lower bound: {grid.GetLowerBound(1)}");
 WriteLine($"2nd dimension, upper bound: {grid.GetUpperBound(1)}");
 
-for (int row = 0; row <= grid.GetUpperBound(0); row++)
+for (int row = 0; row < 3; row++)
 {
-    for (int col = 0; col <= grid.GetUpperBound(1); col++)
+    for (int col = 0; col < 4; col++)
     {
         WriteLine($"Row {row}, Column {col}: {grid[row, col]}");
     }
