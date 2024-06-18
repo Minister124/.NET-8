@@ -111,3 +111,23 @@ happening. Explicitly calling ToString does avoid a boxing operation,
 so if you are developing games with Unity then that can help you avoid memory garbage collection issues.
 */
 #endregion
+
+#region Converting from a binary object to a string
+
+byte[] binaryObject = new byte[128]; //Allocate an array of 128 bytes
+
+//populate the array with random bytes.
+Random.Shared.NextBytes(binaryObject);
+
+WriteLine("Binary Object as bytes");
+
+for(int index = 0; index < binaryObject.Length; index++){
+    Write($"{binaryObject[index]:X2}");
+}
+WriteLine();
+
+// Convert the array to Base64 string and output as text.
+string encoded = ToBase64String(binaryObject);
+WriteLine($"Binary Object as Base64: {encoded}");
+
+#endregion
