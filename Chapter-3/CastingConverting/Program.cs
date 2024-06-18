@@ -84,3 +84,13 @@ for (int i = 0; i < 8; i++){
 }
 WriteLine();
 #endregion
+
+#region Taking Control of rounding rules
+foreach (double i in doubles) //foreach statement can be used to enumerate all the items in a multi-dimensional array
+{
+    WriteLine(format: "Math.Round({0}, 0, MidpointRounding.AwayFromZero is {1})",
+    arg0: i,
+    arg1: Math.Round(value: i, digits:0,
+    mode: MidpointRounding.AwayFromZero));
+}
+#endregion
