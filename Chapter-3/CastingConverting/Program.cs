@@ -94,3 +94,20 @@ foreach (double i in doubles) //foreach statement can be used to enumerate all t
     mode: MidpointRounding.AwayFromZero));
 }
 #endregion
+
+#region Converting from any type to a string
+
+int number = 10;
+WriteLine(number.ToString());
+bool boolean = true;
+WriteLine(boolean.ToString());
+DateTime now = DateTime.Now;
+WriteLine(now.ToString());
+object me = new(); // Target typed object
+WriteLine(me.ToString());
+/*Passing any object to the WriteLine method implicitly converts it into a string, so it is 
+not necessary to explicitly call ToString. We are doing so here just to emphasize what is 
+happening. Explicitly calling ToString does avoid a boxing operation,
+so if you are developing games with Unity then that can help you avoid memory garbage collection issues.
+*/
+#endregion
