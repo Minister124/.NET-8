@@ -1,4 +1,5 @@
 ﻿using static System.Convert; //To use Int32
+using System.Globalization; // To Parse String
 
 #region Casting numbers Implicitly and Explicitly
 int a = 10;
@@ -130,4 +131,16 @@ WriteLine();
 string encoded = ToBase64String(binaryObject);
 WriteLine($"Binary Object as Base64: {encoded}");
 
+#endregion
+
+#region Parsing from strings to numbers or dates and times
+
+ //setting the current culture to make sure date parsing works.
+ //CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-us");
+
+int chutiya = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 June 1980");
+WriteLine($"I have {chutiya} friends to invite to my party.");
+WriteLine($"My birthday is {birthday}");
+WriteLine($"My birthday is {birthday:D}");
 #endregion
