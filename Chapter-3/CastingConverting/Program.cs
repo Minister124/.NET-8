@@ -156,3 +156,15 @@ if(int.TryParse(input, out int count))
     WriteLine("I could not parse the input");
 }
 #endregion
+
+#region Understanding the try method naming convention
+// A method that might throw an exception
+int num = int.Parse("123");
+
+//The Try Equivalent of the method.
+//bool success = int.TryParse("123", out int num);
+WriteLine($"{num}");
+
+//Trying to create a URL for Web Api.
+//bool success = Uri.TryCreate("https://localhost:5000/api/customer", UriKind.Absolute, out Uri serviceUrl);
+#endregion
