@@ -63,4 +63,13 @@ checked
     }
 }
 
+unchecked
+{
+ int z = int.MaxValue + 1; 
+ WriteLine($"Initial value: {z}"); 
+ z--;
+ WriteLine($"After decrementing: {z}"); 
+ z--;
+ WriteLine($"After decrementing: {z}");
+}
 #endregion
