@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "Handl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch03X02LoopsAndOverflow", "Ch03X02LoopsAndOverflow\Ch03X02LoopsAndOverflow.csproj", "{EDAA80AD-A269-4F0C-BC39-2007749707A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{F8D9035A-2A36-4655-A80E-FBC5C51691AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EDAA80AD-A269-4F0C-BC39-2007749707A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDAA80AD-A269-4F0C-BC39-2007749707A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDAA80AD-A269-4F0C-BC39-2007749707A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D9035A-2A36-4655-A80E-FBC5C51691AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D9035A-2A36-4655-A80E-FBC5C51691AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D9035A-2A36-4655-A80E-FBC5C51691AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D9035A-2A36-4655-A80E-FBC5C51691AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
