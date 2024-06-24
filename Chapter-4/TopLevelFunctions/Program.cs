@@ -1,17 +1,7 @@
 ﻿using static System.Console;
+#region Exploring top-level programs, functions, and namespaces
 
-namespace TopLevelFunctions;
+WriteLine("* Top-level functions example");
 
-class Program
-{
-
-    static void MyNameSpace(){
-        WriteLine("Namespace of program class: {0}",
-        arg0: typeof(Program).Namespace);
-    }
-    static void Main(string[] args)
-    {
-        MyNameSpace();
-        Console.WriteLine("Hello, World!");
-    }
-}
+MyNameSpace(); // Call the function.
+#endregion
