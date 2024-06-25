@@ -1,13 +1,15 @@
 ﻿using System.Globalization;
 
 partial class Program{
+
+    #region Functions that do not return value
     static void MultiplicationTable(int num, int rows = 12){
         for(int i = 1; i <= rows; i++){
             WriteLine($"{num} x {i} = {num*i}");
         }
         WriteLine();
     }
-
+    #endregion
 
     #region Functions that return value
     static decimal CalculateTax(decimal amount, string regionCode){
@@ -60,6 +62,20 @@ partial class Program{
             Write($"{CardinalNumbersToOrdinal(number)} ");
         }
         WriteLine();
+    }
+    #endregion
+
+    #region Calculation factorial using recursion
+    static int Factorial(int number){
+        if(number == 0){
+            return 1;
+        }
+        else if(number < 0){
+            throw new ArgumentOutOfRangeException(message:$"Only Input: {number}", paramName: nameof(number));
+        }
+        else{
+            return number * Factorial(number - 1);
+        }
     }
     #endregion
 }
