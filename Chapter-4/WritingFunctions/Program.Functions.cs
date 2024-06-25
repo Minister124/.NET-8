@@ -22,7 +22,7 @@ partial class Program{
         return rate * amount;
     }
 
-    static void ConfigureConsole(string culture="en-US", bool useComputerCulture = false){
+    static void ConfigureConsole(string culture="fr-FR", bool useComputerCulture = false){
         // To enable Unicode characters like Euro symbol in the console.
         OutputEncoding = System.Text.Encoding.UTF8;
 
