@@ -8,6 +8,8 @@ partial class Program{
         WriteLine();
     }
 
+
+    #region Functions that return value
     static decimal CalculateTax(decimal amount, string regionCode){
         decimal rate = regionCode switch{
             "CH" => 0.99M,
@@ -31,4 +33,33 @@ partial class Program{
         }
         WriteLine($"CurrentCulture: {CultureInfo.CurrentCulture.DisplayName}");
     }
+    #endregion
+
+    #region Converting numbers from cardinal to ordinal
+    static string CardinalNumbersToOrdinal(uint number){
+        uint lastTwoDigits = number % 100;
+        switch(lastTwoDigits){
+            case 11:
+            case 12:
+            case 13:
+                return $"{number:N0}th";
+            default:
+                uint lastDigit = number % 10;
+                string suffix = lastDigit switch{
+                    1 => "st",
+                    2 => "nd",
+                    3 => "rd",
+                    _ => "th",
+                };
+                return $"{number:N0}{suffix}";
+        }
+    }
+
+    static void RunCardinalNumbersToOrdinal(){
+        for(uint number = 1; number <= 200; number++){
+            Write($"{CardinalNumbersToOrdinal(number)} ");
+        }
+        WriteLine();
+    }
+    #endregion
 }
