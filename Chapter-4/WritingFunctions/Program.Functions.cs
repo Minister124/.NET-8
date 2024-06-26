@@ -99,4 +99,26 @@ partial class Program{
         }
     }
     #endregion
+
+    #region Using Lambdas in Function Implementation
+    static int FibonacciTerms(uint terms){
+        if(terms < 0){
+            throw new ArgumentOutOfRangeException(paramName: nameof(terms), message: "Number of terms cannot be negative.");
+        }
+        return terms switch{
+            0 => throw new ArgumentOutOfRangeException(paramName: nameof(terms), message: "Number of terms cannot be zero."),
+            1 => 0,
+            2 => 1,
+            _ => FibonacciTerms(terms - 1) + FibonacciTerms(terms - 2)
+        };
+    }
+
+    static void RunFibonacciTerms(){
+        for(uint i = 1; i <= 15; i++){
+            WriteLine("Fibonacci term {0}: {1}",
+            arg0: CardinalNumbersToOrdinal(i),
+            arg1: FibonacciTerms(i));
+        }
+    }
+    #endregion
 }

@@ -11,4 +11,6 @@
 
 //RunCardinalNumbersToOrdinal();
 
-RunFactorial();
+// RunFactorial();
+
+RunFibonacciTerms();
