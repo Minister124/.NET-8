@@ -2,6 +2,8 @@
 
 partial class Program{
 
+    #region Everytype of Functions
+    
     #region Functions that do not return value
     static void MultiplicationTable(int num, int rows = 12){
         for(int i = 1; i <= rows; i++){
@@ -114,5 +116,6 @@ partial class Program{
             arg1: FibonacciTerms(i));
         }
     }
+    #endregion
     #endregion
 }
