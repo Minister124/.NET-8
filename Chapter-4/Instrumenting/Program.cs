@@ -51,6 +51,9 @@ Trace.WriteLineIf(ts.TraceWarning, "Trace Warning");
 Trace.WriteLineIf(ts.TraceInfo, "Trace Information");
 Trace.WriteLineIf(ts.TraceVerbose, "Trace Verbose");
 
+int unitsInStock = 12;
+LogSourceDetails(unitsInStock > 10);
+
 Debug.Close();
 Trace.Close();
 
