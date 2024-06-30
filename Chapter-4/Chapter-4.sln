@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloading", "HotReloadin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrumenting", "Instrumenting\Instrumenting.csproj", "{0B90AD51-1DD9-4F18-8EC3-536E090919F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLib", "CalculatorLib\CalculatorLib.csproj", "{9898EC44-860B-410D-9442-3FD085E7FAE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{0B90AD51-1DD9-4F18-8EC3-536E090919F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B90AD51-1DD9-4F18-8EC3-536E090919F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B90AD51-1DD9-4F18-8EC3-536E090919F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
