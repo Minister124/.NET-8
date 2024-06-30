@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrumenting", "Instrument
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLib", "CalculatorLib\CalculatorLib.csproj", "{9898EC44-860B-410D-9442-3FD085E7FAE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorLibUnitTests", "CalculatorLibUnitTests\CalculatorLibUnitTests.csproj", "{1900A8DF-D0FD-4E92-86B4-6ED283C83680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9898EC44-860B-410D-9442-3FD085E7FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1900A8DF-D0FD-4E92-86B4-6ED283C83680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1900A8DF-D0FD-4E92-86B4-6ED283C83680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1900A8DF-D0FD-4E92-86B4-6ED283C83680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1900A8DF-D0FD-4E92-86B4-6ED283C83680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
