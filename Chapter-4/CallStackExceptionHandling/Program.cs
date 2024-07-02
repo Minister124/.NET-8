@@ -15,5 +15,10 @@ void Alpha(){
 
 void Beta(){
     WriteLine("In Beta");
-    Processor.Gamma();
+    try{
+        Processor.Gamma();
+    }catch(Exception ex){
+        WriteLine($"Caught exception: {ex.Message}");
+        throw;
+    }
 }
