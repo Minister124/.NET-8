@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandlingl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandling", "CallStackExceptionHandling\CallStackExceptionHandling.csproj", "{A11A3BCD-E327-491C-9E71-1B65C1DD91B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorsApp", "PrimeFactorsApp\PrimeFactorsApp.csproj", "{211A7475-789C-456D-B506-A0C7DAD03469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorsTests", "PrimeFactorsTests\PrimeFactorsTests.csproj", "{61A5AFF8-2A77-4D1D-86E8-091C38F11357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorsLib", "PrimeFactorsLib\PrimeFactorsLib.csproj", "{06196E7E-3A8B-4056-A98D-670CD12D4799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +72,17 @@ Global
 		{A11A3BCD-E327-491C-9E71-1B65C1DD91B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11A3BCD-E327-491C-9E71-1B65C1DD91B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11A3BCD-E327-491C-9E71-1B65C1DD91B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211A7475-789C-456D-B506-A0C7DAD03469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211A7475-789C-456D-B506-A0C7DAD03469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211A7475-789C-456D-B506-A0C7DAD03469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211A7475-789C-456D-B506-A0C7DAD03469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A5AFF8-2A77-4D1D-86E8-091C38F11357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A5AFF8-2A77-4D1D-86E8-091C38F11357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A5AFF8-2A77-4D1D-86E8-091C38F11357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A5AFF8-2A77-4D1D-86E8-091C38F11357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06196E7E-3A8B-4056-A98D-670CD12D4799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06196E7E-3A8B-4056-A98D-670CD12D4799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06196E7E-3A8B-4056-A98D-670CD12D4799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06196E7E-3A8B-4056-A98D-670CD12D4799}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
