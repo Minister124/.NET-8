@@ -43,7 +43,7 @@ public class PrimeFactorsUnitTest
     {
       // arrange
       int number = 1001;
-      string expected = "number must be between 1 and 1000.";
+      string expected = "Number must be between 1 and 1000.";
 
       // act
       string actual = PrimeNumber.PrimeFactors(number);
