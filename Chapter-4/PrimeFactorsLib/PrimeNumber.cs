@@ -1,11 +1,10 @@
-﻿using static System.Console;
+﻿namespace PrimeFactorsLib;
 
-namespace PrimeFactorsLib;
-
-public class Prime
+public class PrimeNumber
 {
-    public static int[] PrimeNumbers = new[]{
-        997, 991, 983, 977, 971, 967, 953,
+    public static int[] PrimeNumbers = new[]
+    {
+      997, 991, 983, 977, 971, 967, 953,
       947, 941, 937, 929, 919, 911, 907, 887,
       883, 881, 877, 863, 859, 857, 853, 839,
       829, 827, 823, 821, 811, 809, 797, 787,
@@ -27,41 +26,37 @@ public class Prime
       47, 43, 41, 37, 31, 29, 23, 19, 17, 13,
       11, 7, 5, 3, 2
     };
-
     /// <summary>
     /// Calculates the prime factors of the input number between 1 and 1000.
     /// </summary>
     /// <param name="number">An integer between 1 and 1000.</param>
     /// <returns>A string listing the prime factors of number, or an error message.</returns>
-    public static string PrimeFactors(int number)
-    {
-      if ((number < 1) || (number > 1000))
-      {
-        return $"{nameof(number)} must be between 1 and 1000.";
-      }
-
-      string factors = string.Empty;
-
-      foreach (int divisor in PrimeNumbers)
-      {
-        int remainder;
-        do
+    public static string PrimeFactors(int number){
+        if (number < 1 || number > 1000)
         {
-          remainder = number % divisor;
-          if (remainder == 0)
-          {
-            number = number / divisor;
-            if (number == 1)
-            {
-              factors += $"{divisor}";
-            }
-            else
-            {
-              factors += $"{divisor} x ";
-            }
-          }
-        } while (remainder == 0);
-      }
-      return $"{factors}";
+            return "Number must be between 1 and 1000.";
+        }
+        if (number == 1)
+        {
+            return "1 has no prime factors.";
+        }
+        string factors = string.Empty;
+
+        foreach(int division in PrimeNumbers){
+            int remainder;
+            do{
+                remainder = number % division;
+                if (remainder == 0){
+                    number /= division;
+                    if(number == 1){
+                        factors += division;
+                    }
+                    else{
+                        factors += $"{division} x ";
+                    }
+                }
+            } while (remainder == 0);
+        }
+        return $"{factors}";
     }
 }
