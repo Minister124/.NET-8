@@ -1,6 +1,6 @@
 ﻿namespace PacktLibraryNetStandard2;
 
-public class Person
+public class Person : Object
 {
     
 }
