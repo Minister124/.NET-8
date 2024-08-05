@@ -13,6 +13,14 @@ PacktLibraryNetStandard2.Person bob = new();
 WriteLine(bob); //Implicit call to ToString();
 // WriteLine(bob.ToString()); Does the same thing.
 
+bob.Name = "Khatey";
+
+bob.Born = new DateTimeOffset(
+    year: 1989, month: 12, day: 25, hour: 15, minute: 30, second: 24,
+    offset: new TimeSpan(hours: 5, minutes: 45, seconds: 0) //Nepal Time
+);
+
+WriteLine($"{bob.Name} was born on {bob.Born}.");
 
 Nep.Person p = new();
 Sun.Person f = new();
