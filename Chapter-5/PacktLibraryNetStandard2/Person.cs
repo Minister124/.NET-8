@@ -12,5 +12,7 @@ public class Person : Object
     // and hours offset from Universal Coordinated Time (UTC), which is related to the 
     // time zone. The choice depends on how much detail you need to store.
 
+    public AncientWondersOfWorld ancientWondersOfWorld;
+    
     #endregion
 }

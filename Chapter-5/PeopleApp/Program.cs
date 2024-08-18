@@ -55,3 +55,10 @@ WriteLine($"{MangneyBudo.Name} was born in {MangneyBudo.Born:d}");
 
 #endregion
 
+#region enums
+
+bob.ancientWondersOfWorld = AncientWondersOfWorld.GreatPyramidOfGiza;
+
+WriteLine(format:"{0} who was born in {1:d}, favorite wonder of the world is {2}", arg0:bob.Name, arg1:bob.Born, arg2:bob.ancientWondersOfWorld);
+
+#endregion
