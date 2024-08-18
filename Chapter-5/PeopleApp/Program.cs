@@ -57,8 +57,17 @@ WriteLine($"{MangneyBudo.Name} was born in {MangneyBudo.Born:d}");
 
 #region enums
 
-bob.ancientWondersOfWorld = AncientWondersOfWorld.GreatPyramidOfGiza;
+bob.ancientWondersOfWorld = WondersOfTheAncientWorld.GreatPyramidOfGiza;
 
 WriteLine(format:"{0} who was born in {1:d}, favorite wonder of the world is {2}", arg0:bob.Name, arg1:bob.Born, arg2:bob.ancientWondersOfWorld);
 
+#endregion
+
+#region storing multiple values using enum
+
+bob.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabylon
+ | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
+
+
+WriteLine($"{bob.Name}'s bucket list is {bob.BucketList}.");
 #endregion
