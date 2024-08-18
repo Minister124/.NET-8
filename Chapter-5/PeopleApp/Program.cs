@@ -1,7 +1,7 @@
 ﻿using PacktLibraryNetStandard2;
+using Env = System.Environment; //Aliases
 using Nep = Nepal; //Aliases
 using Sun = Sunsari; //Aliases
-using Env = System.Environment; //Aliases
 
 ConfigureConsole(); // Sets Current culture to US english
 
@@ -11,6 +11,7 @@ ConfigureConsole(); // Sets Current culture to US english
 
 PacktLibraryNetStandard2.Person bob = new();
 WriteLine(bob); //Implicit call to ToString();
+
 // WriteLine(bob.ToString()); Does the same thing.
 
 #region Setting and outputting field values
@@ -18,7 +19,12 @@ WriteLine(bob); //Implicit call to ToString();
 bob.Name = "Khatey";
 
 bob.Born = new DateTimeOffset(
-    year: 1989, month: 12, day: 25, hour: 15, minute: 30, second: 24,
+    year: 1989,
+    month: 12,
+    day: 25,
+    hour: 15,
+    minute: 30,
+    second: 24,
     offset: new TimeSpan(hours: 5, minutes: 45, seconds: 0) //Nepal Time
 );
 
@@ -41,14 +47,14 @@ WriteLine(Env.CommandLine);
 
 #region Setting field values using object initializer syntax
 
-Person MangneyBudo = new()
-{
-    Name = "Mangney Budo",
-    Born = new(1991, 4, 28, 5, 15, 45, TimeSpan.Zero)
-};
+Person MangneyBudo =
+    new() { Name = "Mangney Budo", Born = new(1991, 4, 28, 5, 15, 45, TimeSpan.Zero) };
 
-WriteLine(format: "{0} was born in {1:d}", //short date.
- arg0: MangneyBudo.Name, arg1: MangneyBudo.Born);
+WriteLine(
+    format: "{0} was born in {1:d}", //short date.
+    arg0: MangneyBudo.Name,
+    arg1: MangneyBudo.Born
+);
 
 //using interpolated string
 WriteLine($"{MangneyBudo.Name} was born in {MangneyBudo.Born:d}");
@@ -59,15 +65,36 @@ WriteLine($"{MangneyBudo.Name} was born in {MangneyBudo.Born:d}");
 
 bob.ancientWondersOfWorld = WondersOfTheAncientWorld.GreatPyramidOfGiza;
 
-WriteLine(format:"{0} who was born in {1:d}, favorite wonder of the world is {2}", arg0:bob.Name, arg1:bob.Born, arg2:bob.ancientWondersOfWorld);
+WriteLine(
+    format: "{0} who was born in {1:d}, favorite wonder of the world is {2}",
+    arg0: bob.Name,
+    arg1: bob.Born,
+    arg2: bob.ancientWondersOfWorld
+);
 
 #endregion
 
 #region storing multiple values using enum
 
-bob.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabylon
- | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
-
+bob.BucketList =
+    WondersOfTheAncientWorld.HangingGardensOfBabylon
+    | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
 
 WriteLine($"{bob.Name}'s bucket list is {bob.BucketList}.");
+#endregion
+
+#region Understanding Generic Type
+
+Person shit = new();
+shit.Name = "Shit";
+bob.Children.Add(shit); //works for all version of C#
+
+//Works for C#3 and higher
+bob.Children.Add(new Person { Name = "Shithead" });
+
+//Works for C#9 and higher
+bob.Children.Add(new() { Name = "Shit Face" });
+
+WriteLine($"{bob.Name} has {bob.Children.Count} Childrens");
+
 #endregion

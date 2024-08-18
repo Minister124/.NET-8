@@ -1,4 +1,6 @@
-﻿namespace PacktLibraryNetStandard2;
+﻿using System;
+using System.Collections.Generic;
+namespace PacktLibraryNetStandard2;
 
 public class Person : Object
 {
@@ -14,6 +16,8 @@ public class Person : Object
 
     public WondersOfTheAncientWorld ancientWondersOfWorld;
     public WondersOfTheAncientWorld BucketList;
+
+    public List<Person> Children = new(); //generic collection
 
     #endregion
 }
