@@ -94,7 +94,19 @@ bob.Children.Add(new Person { Name = "Shithead" });
 
 //Works for C#9 and higher
 bob.Children.Add(new() { Name = "Shit Face" });
+bob.Children.Add(new() { Name = "Shit Face", Born = new(1997, 4, 15, 12, 12, 12, TimeSpan.Zero) });
 
 WriteLine($"{bob.Name} has {bob.Children.Count} Childrens");
+
+for (int i = 0; i < bob.Children.Count; i++) { 
+    WriteLine($"{bob.Children[i].Name}");
+    WriteLine($"{bob.Children[i].Born}");
+}
+
+foreach (var item in bob.Children)
+{
+    WriteLine($"{item.Name}");
+    WriteLine($"{item.Born}");
+}
 
 #endregion
