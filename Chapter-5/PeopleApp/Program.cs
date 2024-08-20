@@ -96,7 +96,7 @@ bob.Children.Add(new Person { Name = "Shithead" });
 bob.Children.Add(new() { Name = "Shit Face" });
 bob.Children.Add(new() { Name = "Shit Face", Born = new(1997, 4, 15, 12, 12, 12, TimeSpan.Zero) });
 
-WriteLine($"{bob.Name} who is {Person.Species} has {bob.Children.Count} Childrens");
+WriteLine($"{bob.Name} who is {Person.Species} has {bob.Children.Count} Childrens are from {bob.Planet}");
 
 for (int i = 0; i < bob.Children.Count; i++)
 {

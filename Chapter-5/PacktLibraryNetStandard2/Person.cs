@@ -21,5 +21,6 @@ public class Person : Object
 
     public const string Species = "Homo Sapiens"; //instance of class is not needed to access. Is done through className
 
+    public readonly string Planet = "Earth"; //instance of class is needed
     #endregion
 }
