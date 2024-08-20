@@ -96,9 +96,10 @@ bob.Children.Add(new Person { Name = "Shithead" });
 bob.Children.Add(new() { Name = "Shit Face" });
 bob.Children.Add(new() { Name = "Shit Face", Born = new(1997, 4, 15, 12, 12, 12, TimeSpan.Zero) });
 
-WriteLine($"{bob.Name} has {bob.Children.Count} Childrens");
+WriteLine($"{bob.Name} who is {Person.Species} has {bob.Children.Count} Childrens");
 
-for (int i = 0; i < bob.Children.Count; i++) { 
+for (int i = 0; i < bob.Children.Count; i++)
+{
     WriteLine($"{bob.Children[i].Name}");
     WriteLine($"{bob.Children[i].Born}");
 }
@@ -109,4 +110,28 @@ foreach (var item in bob.Children)
     WriteLine($"{item.Born}");
 }
 
+#endregion
+
+#region Static Field
+BankAccount.InterestRate = 0.012M; //stored a shared value in static field
+
+BankAccount Khatey = new();
+Khatey.AccountName = "KhateyAccount";
+Khatey.Balance = 1200;
+
+WriteLine(
+    format: "{0} earned {1:C} interest",
+    arg0: Khatey.AccountName,
+    arg1: Khatey.Balance * BankAccount.InterestRate
+);
+
+BankAccount bhikari = new();
+bhikari.AccountName = "BhikariAccount";
+bhikari.Balance = 20;
+
+WriteLine(
+    format: "{0} has earned {1:c} interest",
+    arg0: bhikari.AccountName,
+    arg1: bhikari.Balance * BankAccount.InterestRate
+);
 #endregion

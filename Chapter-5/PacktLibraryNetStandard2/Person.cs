@@ -19,5 +19,7 @@ public class Person : Object
 
     public List<Person> Children = new(); //generic collection
 
+    public const string Species = "Homo Sapiens"; //instance of class is not needed to access. Is done through className
+
     #endregion
 }
