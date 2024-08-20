@@ -177,3 +177,20 @@ WriteLine(format:
  arg2: gunny.Instantiated);
 #endregion
 #endregion
+
+#region Requiring fields to be set during instantiation
+// Instantiate a book using object initializer syntax.
+Book book1 = new()
+{
+ Isbn = "978-1803237800",
+ Title = "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals"
+};
+
+Book book2 = new(isbn: "978-1803237800",
+ title: "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals")
+{
+ Author = "Mark J. Price",
+ PageCount = 821
+};
+WriteLine($"{book2.Isbn}: {book2.Title} written by {book2.Author} has {book2.PageCount}");
+#endregion

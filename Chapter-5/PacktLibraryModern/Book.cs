@@ -1,4 +1,6 @@
-﻿namespace PacktLibraryModern;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace PacktLibraryModern;
 
 public class Book
 {
@@ -9,4 +11,14 @@ public class Book
     public string? Author;
     public int PageCount;
     #endregion
+
+    //Constructor for use with object initializer syntax.
+    public Book(){}
+
+    //Constructor with parameters to set required fields
+    [SetsRequiredMembers] //only then can be accessed by object of this class
+    public Book(string? isbn, string? title){
+        Isbn = isbn;
+        Title = title;
+    }
 }
