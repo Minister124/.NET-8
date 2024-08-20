@@ -22,5 +22,28 @@ public class Person : Object
     public const string Species = "Homo Sapiens"; //instance of class is not needed to access. Is done through className
 
     public readonly string Planet = "Earth"; //instance of class is needed
+    
+    public readonly DateTime Instantiated;
+    #endregion
+
+    #region Constructors: Called when using new to instantiate a type
+    public Person(){
+        // Constructors can set default values for fields
+    // including any read-only fields like Instantiated.
+        Name = "Unknown";
+        Instantiated = DateTime.Now;
+    }
+    #endregion
+
+    #region Multiple Constructors
+    public Person(string initialName, string homePlanet){
+        Name = initialName;
+        Planet = homePlanet;
+        Instantiated = DateTime.Now;
+    }
+    public Person(string homePlanet){
+        Name = "Sheesh";
+        Planet = homePlanet;
+    }
     #endregion
 }

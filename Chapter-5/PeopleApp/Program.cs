@@ -1,4 +1,5 @@
-﻿using PacktLibraryNetStandard2;
+﻿using PacktLibraryModern;
+using PacktLibraryNetStandard2;
 using Env = System.Environment; //Aliases
 using Nep = Nepal; //Aliases
 using Sun = Sunsari; //Aliases
@@ -96,7 +97,9 @@ bob.Children.Add(new Person { Name = "Shithead" });
 bob.Children.Add(new() { Name = "Shit Face" });
 bob.Children.Add(new() { Name = "Shit Face", Born = new(1997, 4, 15, 12, 12, 12, TimeSpan.Zero) });
 
-WriteLine($"{bob.Name} who is {Person.Species} has {bob.Children.Count} Childrens are from {bob.Planet}");
+WriteLine(
+    $"{bob.Name} who is {Person.Species} has {bob.Children.Count} Childrens are from {bob.Planet}"
+);
 
 for (int i = 0; i < bob.Children.Count; i++)
 {
@@ -134,4 +137,43 @@ WriteLine(
     arg0: bhikari.AccountName,
     arg1: bhikari.Balance * BankAccount.InterestRate
 );
+#endregion
+
+#region Required Fields
+Book book =
+    new()
+    {
+        Isbn = "978-1803237800",
+        Title = "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals",
+    };
+
+WriteLine(
+    "{0}: {1} written by {2} has {3:N0} pages",
+    book.Isbn,
+    book.Title,
+    book.Author,
+    book.PageCount
+);
+#endregion
+
+#region Constructor
+Person blank = new();
+WriteLine(
+    format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+    arg0: blank.Name,
+    arg1: blank.Planet,
+    arg2: blank.Instantiated
+);
+
+#region Multiple Constructor
+Person sheesh = new(homePlanet: "Mars");
+WriteLine(format: "{0} is from {1}", arg0: sheesh.Name, arg1: sheesh.Planet);
+
+Person gunny = new(initialName: "Gunny", homePlanet: "Mars");
+WriteLine(format:
+ "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+ arg0: gunny.Name,
+ arg1: gunny.Planet,
+ arg2: gunny.Instantiated);
+#endregion
 #endregion
