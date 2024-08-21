@@ -201,4 +201,7 @@ WriteLine(bob.GetOrigin());
 WriteLine(bob.SayHello());
 WriteLine(bob.SayHello("Magenybudo"));
 WriteLine(bob.OptionalParameters());
+WriteLine(bob.OptionalParameters("Jump!", 98.5));
+WriteLine(bob.OptionalParameters(number: 52.7, command: "Hide!")); //Naming parameter values when calling methods
+WriteLine(bob.OptionalParameters("Poke!", active: false));
 #endregion
