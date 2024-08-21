@@ -194,3 +194,9 @@ Book book2 = new(isbn: "978-1803237800",
 };
 WriteLine($"{book2.Isbn}: {book2.Title} written by {book2.Author} has {book2.PageCount}");
 #endregion
+
+#region Methods calling and return
+bob.WriteToConsole();
+WriteLine(bob.GetOrigin());
+
+#endregion
