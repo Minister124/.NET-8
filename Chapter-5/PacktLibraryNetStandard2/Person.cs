@@ -68,8 +68,19 @@ public class Person : Object
     public string SayHello(){
         return $"{Name} says 'Hello!'";
     }
-    public string SayHelloTo(string name){
+    public string SayHello(string name){
         return $"{Name} say 'Hello, {name}!'";
+    }
+    #endregion
+    
+    #region Optional Parameters
+    public string OptionalParameters(string command=  "Run!", double number = 0.0, bool active = true)
+    {
+        return string.Format(
+            format: "Command is {0}, number is {1}, active is {2}",
+            arg0: command,
+            arg1: number,
+            arg2: active);
     }
     #endregion
 }

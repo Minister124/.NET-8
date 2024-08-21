@@ -198,5 +198,7 @@ WriteLine($"{book2.Isbn}: {book2.Title} written by {book2.Author} has {book2.Pag
 #region Methods calling and return
 bob.WriteToConsole();
 WriteLine(bob.GetOrigin());
-
+WriteLine(bob.SayHello());
+WriteLine(bob.SayHello("Magenybudo"));
+WriteLine(bob.OptionalParameters());
 #endregion
