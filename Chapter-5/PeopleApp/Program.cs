@@ -258,3 +258,17 @@ public class LifeTheUniverseAndEverything
 // var thing2 = (bob.Name, bob.Children.Count); 
 // WriteLine($"{thing2.Name} has {thing2.Count} children.");
 #endregion
+
+#region Deconstructing tuples
+// // Store return value in a tuple variable with two named fields.
+// (string name, int number) namedFields = bob.GetNamedFruit();
+// // You can then access the named fields.
+// WriteLine($"{namedFields.name}, {namedFields.number}");
+// // Deconstruct the return value into two separate variables.
+// (string name, int number) = bob.GetNamedFruit();
+// // You can then access the separate variables.
+// WriteLine($"{name}, {number}");
+
+// (string fruitName, int fruitNumber) = bob.GetFruit();
+// WriteLine($"Deconstructed tuple: {fruitName}, {fruitNumber}");
+#endregion
