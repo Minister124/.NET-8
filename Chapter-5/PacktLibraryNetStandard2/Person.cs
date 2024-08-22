@@ -5,7 +5,6 @@ namespace PacktLibraryNetStandard2;
 
 public class Person : Object
 {
-    #region Fields: Data or state of this person.
     public string? Name; // ? means it can be null
     public DateTimeOffset Born;
 
@@ -26,9 +25,7 @@ public class Person : Object
     public readonly string Planet = "Earth"; //instance of class is needed
 
     public readonly DateTime Instantiated;
-    #endregion
 
-    #region Constructors: Called when using new to instantiate a type
     public Person()
     {
         // Constructors can set default values for fields
@@ -36,9 +33,7 @@ public class Person : Object
         Name = "Unknown";
         Instantiated = DateTime.Now;
     }
-    #endregion
 
-    #region Multiple Constructors
     public Person(string initialName, string homePlanet)
     {
         Name = initialName;
@@ -51,9 +46,7 @@ public class Person : Object
         Name = "Sheesh";
         Planet = homePlanet;
     }
-    #endregion
 
-    #region Returning values from Methods
     public void WriteToConsole()
     {
         WriteLine($"{Name} was born {Born:dddd}.");
@@ -63,9 +56,7 @@ public class Person : Object
     {
         return $"{Name} was born on {Planet}";
     }
-    #endregion
 
-    #region Defining and Passing Parameters to Methods
     public string SayHello()
     {
         return $"{Name} says 'Hello!'";
@@ -75,9 +66,7 @@ public class Person : Object
     {
         return $"{Name} say 'Hello, {name}!'";
     }
-    #endregion
 
-    #region Optional Parameters
     public string OptionalParameters(
         int count,
         string command = "Run!",
@@ -92,9 +81,7 @@ public class Person : Object
             arg2: active
         );
     }
-    #endregion
 
-    #region Controlling how parameters are passed
     public void PassingParameters(int w, in int x, ref int y, out int z)
     {
         // out parameters cannot have a default and they
@@ -107,5 +94,13 @@ public class Person : Object
         z++;
         WriteLine($"In the method: w={w}, x={x}, y={y}, z={z}");
     }
-    #endregion
+
+    // Method that returns a tuple: (string, int).
+    public (string, int) GetFruit()
+    {
+        return ("Apples", 5);
+    }
+
+    //Method that return a tuple with named fileds
+    public (string Name, int Number) GetNamedFruit() { return (Name:"Apples", Number:5); }
 }
