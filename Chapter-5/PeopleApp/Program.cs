@@ -170,28 +170,33 @@ Person sheesh = new(homePlanet: "Mars");
 WriteLine(format: "{0} is from {1}", arg0: sheesh.Name, arg1: sheesh.Planet);
 
 Person gunny = new(initialName: "Gunny", homePlanet: "Mars");
-WriteLine(format:
- "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
- arg0: gunny.Name,
- arg1: gunny.Planet,
- arg2: gunny.Instantiated);
+WriteLine(
+    format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+    arg0: gunny.Name,
+    arg1: gunny.Planet,
+    arg2: gunny.Instantiated
+);
 #endregion
 #endregion
 
 #region Requiring fields to be set during instantiation
 // Instantiate a book using object initializer syntax.
-Book book1 = new()
-{
- Isbn = "978-1803237800",
- Title = "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals"
-};
+Book book1 =
+    new()
+    {
+        Isbn = "978-1803237800",
+        Title = "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals",
+    };
 
-Book book2 = new(isbn: "978-1803237800",
- title: "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals")
-{
- Author = "Mark J. Price",
- PageCount = 821
-};
+Book book2 =
+    new(
+        isbn: "978-1803237800",
+        title: "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals"
+    )
+    {
+        Author = "Mark J. Price",
+        PageCount = 821,
+    };
 WriteLine($"{book2.Isbn}: {book2.Title} written by {book2.Author} has {book2.PageCount}");
 #endregion
 
@@ -205,5 +210,14 @@ WriteLine(bob.OptionalParameters(3, "Jump!", 98.5));
 WriteLine(bob.OptionalParameters(3, number: 52.7, command: "Hide!")); //Naming parameter values when calling methods
 WriteLine(bob.OptionalParameters(3, "Poke!", active: false));
 bob.OptionalParameters(number: 52.7, command: "Hide!", count: 3); //you can change thier positions if you have name arguments
+#endregion
 
+#region types of parameters
+int a = 10;
+int b = 20;
+int c = 30;
+int d = 40;
+WriteLine($"Before: a={a}, b={b}, c={c}, d={d}");
+bob.PassingParameters(a, b, ref c, out d);
+WriteLine($"After: a={a}, b={b}, c={c}, d={d}");
 #endregion

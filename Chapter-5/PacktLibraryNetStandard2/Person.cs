@@ -59,28 +59,53 @@ public class Person : Object
         WriteLine($"{Name} was born {Born:dddd}.");
     }
 
-    public string GetOrigin(){
+    public string GetOrigin()
+    {
         return $"{Name} was born on {Planet}";
     }
     #endregion
 
     #region Defining and Passing Parameters to Methods
-    public string SayHello(){
+    public string SayHello()
+    {
         return $"{Name} says 'Hello!'";
     }
-    public string SayHello(string name){
+
+    public string SayHello(string name)
+    {
         return $"{Name} say 'Hello, {name}!'";
     }
     #endregion
-    
+
     #region Optional Parameters
-    public string OptionalParameters(int count, string command=  "Run!", double number = 0.0, bool active = true)
+    public string OptionalParameters(
+        int count,
+        string command = "Run!",
+        double number = 0.0,
+        bool active = true
+    )
     {
         return string.Format(
             format: "Command is {0}, number is {1}, active is {2}",
             arg0: command,
             arg1: number,
-            arg2: active);
+            arg2: active
+        );
+    }
+    #endregion
+
+    #region Controlling how parameters are passed
+    public void PassingParameters(int w, in int x, ref int y, out int z)
+    {
+        // out parameters cannot have a default and they
+        // must be initialized inside the method.
+        z = 100;
+        // Increment each parameter except the read-only x.
+        w++;
+        //x++; // Gives a compiler error!
+        y++;
+        z++;
+        WriteLine($"In the method: w={w}, x={x}, y={y}, z={z}");
     }
     #endregion
 }
