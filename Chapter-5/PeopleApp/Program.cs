@@ -200,8 +200,10 @@ bob.WriteToConsole();
 WriteLine(bob.GetOrigin());
 WriteLine(bob.SayHello());
 WriteLine(bob.SayHello("Magenybudo"));
-WriteLine(bob.OptionalParameters());
-WriteLine(bob.OptionalParameters("Jump!", 98.5));
-WriteLine(bob.OptionalParameters(number: 52.7, command: "Hide!")); //Naming parameter values when calling methods
-WriteLine(bob.OptionalParameters("Poke!", active: false));
+WriteLine(bob.OptionalParameters(3));
+WriteLine(bob.OptionalParameters(3, "Jump!", 98.5));
+WriteLine(bob.OptionalParameters(3, number: 52.7, command: "Hide!")); //Naming parameter values when calling methods
+WriteLine(bob.OptionalParameters(3, "Poke!", active: false));
+bob.OptionalParameters(number: 52.7, command: "Hide!", count: 3); //you can change thier positions if you have name arguments
+
 #endregion

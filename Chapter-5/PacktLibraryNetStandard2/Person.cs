@@ -74,7 +74,7 @@ public class Person : Object
     #endregion
     
     #region Optional Parameters
-    public string OptionalParameters(string command=  "Run!", double number = 0.0, bool active = true)
+    public string OptionalParameters(int count, string command=  "Run!", double number = 0.0, bool active = true)
     {
         return string.Format(
             format: "Command is {0}, number is {1}, active is {2}",
