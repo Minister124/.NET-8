@@ -118,4 +118,16 @@ public class Person : Object
         dob= Born;
         fav = WondersOfTheAncientWorld.StatueOfZeusAtOlympia;
     }
+
+    //Method with a local function
+    public static int Factorial(int num){
+        if(num < 0){
+            throw new ArgumentException($"{nameof(num)} cannot be less than 0.");
+        }
+        return localFactorial(num);
+        int localFactorial(int lnum){
+            if(lnum == 0) return 1;
+            return lnum * localFactorial(lnum -1);
+        }
+    }
 }
