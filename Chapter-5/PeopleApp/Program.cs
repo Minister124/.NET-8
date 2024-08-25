@@ -232,50 +232,54 @@ bob.PassingParameters(e, h, ref g, out int k);
 WriteLine($"After: e={e}, h={h}, g={g}, k={k}");
 #endregion
 
-#region Combining multiple returned values using tuples
-public class TextAndNumber
-{
-    public string? Text;
-    public int Number;
-}
 
-public class LifeTheUniverseAndEverything
-{
-    public TextAndNumber GetTheData()
-    {
-        return new TextAndNumber { Text = "What is the meaning of life", Number = 50 };
-    }
-    //(string, int) fruit = bob.GetFruit();
-    // WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
-}
+// public class TextAndNumber
+// {
+//     public string? Text;
+//     public int Number;
+// }
+
+// public class LifeTheUniverseAndEverything
+// {
+//     public TextAndNumber GetTheData()
+//     {
+//         return new TextAndNumber { Text = "What is the meaning of life", Number = 50 };
+//     }
+//     
+// }
+
+#region returning multiple values using tuples
+(string, int) fruit = bob.GetFruit();
+WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
 #endregion
 
 #region Naming the fields in a tuple
-// Fruit fruitNamed = bob.GetNamedFruit();
-// WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
-// var thing1 = ("Neville", 4);
-// WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
-// var thing2 = (bob.Name, bob.Children.Count); 
-// WriteLine($"{thing2.Name} has {thing2.Count} children.");
+Fruit fruitNamed = bob.GetNamedFruit();
+WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
+var thing1 = ("Neville", 4);
+WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
+var thing2 = (bob.Name, bob.Children.Count); 
+WriteLine($"{thing2.Name} has {thing2.Count} children.");
 #endregion
 
 #region Deconstructing tuples
-// // Store return value in a tuple variable with two named fields.
-// (string name, int number) namedFields = bob.GetNamedFruit();
-// // You can then access the named fields.
-// WriteLine($"{namedFields.name}, {namedFields.number}");
-// // Deconstruct the return value into two separate variables.
-// (string name, int number) = bob.GetNamedFruit();
-// // You can then access the separate variables.
-// WriteLine($"{name}, {number}");
+// Store return value in a tuple variable with two named fields.
+(string name, int number) namedFields = bob.GetNamedFruit();
+// You can then access the named fields.
+WriteLine($"{namedFields.name}, {namedFields.number}");
+// Deconstruct the return value into two separate variables.
+(string name, int number) = bob.GetNamedFruit();
+// You can then access the separate variables.
+WriteLine($"{name}, {number}");
 
-// (string fruitName, int fruitNumber) = bob.GetFruit();
-// WriteLine($"Deconstructed tuple: {fruitName}, {fruitNumber}");
+(string fruitName, int fruitNumber) = bob.GetFruit();
+WriteLine($"Deconstructed tuple: {fruitName}, {fruitNumber}");
 #endregion
 
 #region Deconstructing others using tuple
-// var (name1, dob1) = bob; // Implicitly calls the Deconstruct method.
-// WriteLine($"Deconstructed person: {name1}, {dob1}");
-// var (name2, dob2, fav2) = bob;
-// WriteLine($"Deconstructed person: {name2}, {dob2}, {fav2}");
+var (name1, dob1) = bob; // Implicitly calls the Deconstruct method.
+WriteLine($"Deconstructed person: {name1}, {dob1}");
+var (name2, dob2, fav2) = bob;
+WriteLine($"Deconstructed person: {name2}, {dob2}, {fav2}");
 #endregion
+
