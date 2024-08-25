@@ -283,3 +283,16 @@ var (name2, dob2, fav2) = bob;
 WriteLine($"Deconstructed person: {name2}, {dob2}, {fav2}");
 #endregion
 
+#region Local function
+int lnum = -5;
+try
+{
+    WriteLine($"{lnum} is {Person.Factorial(lnum)}");
+}
+catch (Exception ex)
+{
+    WriteLine($"{ex.GetType()} says: {ex.Message} number was {lnum}");
+    throw;
+}
+#endregion
+
