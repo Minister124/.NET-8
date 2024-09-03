@@ -44,4 +44,34 @@ public partial class Person
         }
     }
     #endregion
+
+    #region Limiting flags enum values
+    private WondersOfTheAncientWorld _favoriteWondersOfTheAncientWorld;
+
+    public WondersOfTheAncientWorld FavoriteWondersOfTheAncientWorld
+    {
+        get { return _favoriteWondersOfTheAncientWorld; }
+        set
+        {
+            string wonderName = value.ToString();
+            if (wonderName.Contains(","))
+            {
+                throw new ArgumentException(
+                    message: "Favorite ancient wonder of the world can only have one value.",
+                    paramName: nameof(FavoriteWondersOfTheAncientWorld)
+                );
+            }
+
+            if (!Enum.IsDefined(typeof(WondersOfTheAncientWorld), wonderName))
+            {
+                throw new ArgumentException(
+                    message: $"{value} is not the member of Ancient wonders of the world",
+                    paramName: nameof(FavoriteWondersOfTheAncientWorld)
+                );
+            }
+
+            _favoriteWondersOfTheAncientWorld = value;
+        }
+    }
+    #endregion
 }

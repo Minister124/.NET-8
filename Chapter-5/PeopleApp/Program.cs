@@ -65,13 +65,23 @@ WriteLine($"{MangneyBudo.Name} was born in {MangneyBudo.Born:d}");
 
 #region enums
 
-bob.ancientWondersOfWorld = WondersOfTheAncientWorld.GreatPyramidOfGiza;
+bob.FavoriteWondersOfTheAncientWorld = WondersOfTheAncientWorld.GreatPyramidOfGiza;
+
+/*
+// Setting multiple enum values throws an exception.
+bob.FavoriteWondersOfTheAncientWorld = 
+  WondersOfTheAncientWorld.StatueOfZeusAtOlympia |
+  WondersOfTheAncientWorld.GreatPyramidOfGiza;
+
+// Setting an invalid enum value throws an exception.
+bob.FavoriteWondersOfTheAncientWorld = (WondersOfTheAncientWorld)128;*/
+
 
 WriteLine(
     format: "{0} who was born in {1:d}, favorite wonder of the world is {2}",
     arg0: bob.Name,
     arg1: bob.Born,
-    arg2: bob.ancientWondersOfWorld
+    arg2: bob.FavoriteWondersOfTheAncientWorld
 );
 
 #endregion

@@ -15,7 +15,8 @@ public partial class Person : Object
     // and hours offset from Universal Coordinated Time (UTC), which is related to the
     // time zone. The choice depends on how much detail you need to store.
 
-    public WondersOfTheAncientWorld ancientWondersOfWorld;
+    //Moved to Personautogen.cs
+    //public WondersOfTheAncientWorld ancientWondersOfWorld;
     public WondersOfTheAncientWorld BucketList;
 
     public List<Person> Children = new(); //generic collection
