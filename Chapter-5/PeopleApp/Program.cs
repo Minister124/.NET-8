@@ -284,7 +284,7 @@ WriteLine($"Deconstructed person: {name2}, {dob2}, {fav2}");
 #endregion
 
 #region Local function
-int lnum = -5;
+int lnum = 5;
 try
 {
     WriteLine($"{lnum} is {Person.Factorial(lnum)}");
@@ -294,5 +294,18 @@ catch (Exception ex)
     WriteLine($"{ex.GetType()} says: {ex.Message} number was {lnum}");
     throw;
 }
+#endregion
+
+#region  Controlling access with properties and indexers
+
+Person sam = new(){
+    Name = "Sam",
+    Born = new(2000, 6, 25, 0, 0, 0, TimeSpan.Zero)
+};
+
+WriteLine(sam.Origin);
+WriteLine(sam.Greetings);
+WriteLine(sam.Age);
+
 #endregion
 

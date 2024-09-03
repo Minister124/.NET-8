@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PacktLibraryNetStandard2;
 
-public class Person : Object
+public partial class Person : Object
 {
     public string? Name; // ? means it can be null
     public DateTimeOffset Born;
@@ -108,26 +108,36 @@ public class Person : Object
     }
 
     //Deconstructors: Break down this object into parts
-    public void Deconstruct(out string? name, out DateTimeOffset dob){
+    public void Deconstruct(out string? name, out DateTimeOffset dob)
+    {
         name = Name;
         dob = Born;
     }
 
-    public void Deconstruct(out string? name, out DateTimeOffset dob, out WondersOfTheAncientWorld fav){
+    public void Deconstruct(
+        out string? name,
+        out DateTimeOffset dob,
+        out WondersOfTheAncientWorld fav
+    )
+    {
         name = Name;
-        dob= Born;
+        dob = Born;
         fav = WondersOfTheAncientWorld.StatueOfZeusAtOlympia;
     }
 
     //Method with a local function
-    public static int Factorial(int num){
-        if(num < 0){
+    public static int Factorial(int num)
+    {
+        if (num < 0)
+        {
             throw new ArgumentException($"{nameof(num)} cannot be less than 0.");
         }
         return localFactorial(num);
-        int localFactorial(int lnum){
-            if(lnum == 0) return 1;
-            return lnum * localFactorial(lnum -1);
+        int localFactorial(int lnum)
+        {
+            if (lnum == 0)
+                return 1;
+            return lnum * localFactorial(lnum - 1);
         }
     }
 }
