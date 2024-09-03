@@ -23,5 +23,25 @@ public partial class Person
 
     // A private backing field to store the property value
     private string? _favoritePrimaryColor;
+
+    public string? FavoritePrimaryColor
+    {
+        get { return _favoritePrimaryColor; }
+        set
+        {
+            switch (value?.ToLower())
+            {
+                case "red":
+                case "green":
+                case "blue":
+                    _favoritePrimaryColor = value;
+                    break;
+                default:
+                    throw new ArgumentException(
+                        $"{value} is not a primary color. " + "Choose from: red, green, blue"
+                    );
+            }
+        }
+    }
     #endregion
 }
