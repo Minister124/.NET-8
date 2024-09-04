@@ -352,3 +352,29 @@ WriteLine($"Sam first child is {sam[1].Name}");
 WriteLine($"Sam child name Khatey is {sam["Khatey"].Age} years old");
 
 #endregion
+
+#region Pattern Matching with Flight
+Passenger[] passengers =
+{
+    new FirstClassPassenger { AirMiles = 1_419, Name = "Magney Budo" },
+    new FirstClassPassenger { AirMiles = 16_564, Name = "Hawaldar Budo" },
+    new BussinessClassPassenger { Name = "Dawa Budo" },
+    new CoachClassPassenger { CarryOnKG = 25.7, Name = "Suntali Budi" },
+    new CoachClassPassenger { CarryOnKG = 5.7, Name = "Khatey" },
+};
+
+foreach (Passenger passenger in passengers)
+{
+    decimal flightCost = passenger switch
+    {
+        FirstClassPassenger pq when pq.AirMiles > 35_000 => 1_500M,
+        FirstClassPassenger pq when pq.AirMiles > 15_000 => 1_750M,
+        FirstClassPassenger _ => 1_750M,
+        BussinessClassPassenger _ => 1_000M,
+        CoachClassPassenger pq when pq.CarryOnKG < 10.0 => 500M,
+        CoachClassPassenger _ => 500M,
+        _ => 800M,
+    };
+    WriteLine($"Flight costs {flightCost:C} for {passenger}");
+}
+#endregion
