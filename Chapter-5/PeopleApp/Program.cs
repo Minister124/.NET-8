@@ -1,9 +1,9 @@
 ﻿using PacktLibraryModern;
 using PacktLibraryNetStandard2;
+using Fruit = (string Name, int Number); // Aliasing a tuple type.
 using Env = System.Environment; //Aliases
 using Nep = Nepal; //Aliases
 using Sun = Sunsari; //Aliases
-using Fruit = (string Name, int Number); // Aliasing a tuple type.
 
 ConfigureConsole(); // Sets Current culture to US english
 
@@ -69,7 +69,7 @@ bob.FavoriteWondersOfTheAncientWorld = WondersOfTheAncientWorld.GreatPyramidOfGi
 
 /*
 // Setting multiple enum values throws an exception.
-bob.FavoriteWondersOfTheAncientWorld = 
+bob.FavoriteWondersOfTheAncientWorld =
   WondersOfTheAncientWorld.StatueOfZeusAtOlympia |
   WondersOfTheAncientWorld.GreatPyramidOfGiza;
 
@@ -255,7 +255,7 @@ WriteLine($"After: e={e}, h={h}, g={g}, k={k}");
 //     {
 //         return new TextAndNumber { Text = "What is the meaning of life", Number = 50 };
 //     }
-//     
+//
 // }
 
 #region returning multiple values using tuples
@@ -268,17 +268,20 @@ Fruit fruitNamed = bob.GetNamedFruit();
 WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
 var thing1 = ("Neville", 4);
 WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
-var thing2 = (bob.Name, bob.Children.Count); 
+var thing2 = (bob.Name, bob.Children.Count);
 WriteLine($"{thing2.Name} has {thing2.Count} children.");
 #endregion
 
 #region Deconstructing tuples
 // Store return value in a tuple variable with two named fields.
 (string name, int number) namedFields = bob.GetNamedFruit();
+
 // You can then access the named fields.
 WriteLine($"{namedFields.name}, {namedFields.number}");
+
 // Deconstruct the return value into two separate variables.
 (string name, int number) = bob.GetNamedFruit();
+
 // You can then access the separate variables.
 WriteLine($"{name}, {number}");
 
@@ -308,10 +311,7 @@ catch (Exception ex)
 
 #region  Controlling access with properties and indexers
 
-Person sam = new(){
-    Name = "Sam",
-    Born = new(2000, 6, 25, 0, 0, 0, TimeSpan.Zero)
-};
+Person sam = new() { Name = "Sam", Born = new(2000, 6, 25, 0, 0, 0, TimeSpan.Zero) };
 
 WriteLine(sam.Origin);
 WriteLine(sam.Greetings);
@@ -329,8 +329,26 @@ try
 }
 catch (System.Exception ex)
 {
-    WriteLine("Tried to set {0} to '{1}': {2}", nameof(sam.FavoritePrimaryColor), color, ex.Message);
+    WriteLine(
+        "Tried to set {0} to '{1}': {2}",
+        nameof(sam.FavoritePrimaryColor),
+        color,
+        ex.Message
+    );
 }
 
-#endregion
+sam.Children.Add(new() { Name = "Charlie", Born = new(2010, 6, 25, 0, 0, 0, TimeSpan.Zero) });
+sam.Children.Add(new() { Name = "Khatey", Born = new(2015, 6, 25, 0, 0, 0, TimeSpan.Zero) });
 
+//Get the list of childern
+WriteLine($"Sam first child is {sam.Children[0].Name}");
+WriteLine($"Sam first child is {sam.Children[1].Name}");
+
+//Get using the int Indexer
+WriteLine($"Sam first child is {sam[0].Name}");
+WriteLine($"Sam first child is {sam[1].Name}");
+
+//Get using the string indexer.
+WriteLine($"Sam child name Khatey is {sam["Khatey"].Age} years old");
+
+#endregion
