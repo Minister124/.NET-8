@@ -354,6 +354,7 @@ WriteLine($"Sam child name Khatey is {sam["Khatey"].Age} years old");
 #endregion
 
 #region Pattern Matching with Flight
+//An array containing mix of passenger types
 Passenger[] passengers =
 {
     new FirstClassPassenger { AirMiles = 1_419, Name = "Magney Budo" },
@@ -367,13 +368,28 @@ foreach (Passenger passenger in passengers)
 {
     decimal flightCost = passenger switch
     {
+        /* C# 8 Syntax
         FirstClassPassenger pq when pq.AirMiles > 35_000 => 1_500M,
         FirstClassPassenger pq when pq.AirMiles > 15_000 => 1_750M,
         FirstClassPassenger _ => 1_750M,
+        */
+        //C# 9 or later syntax
+        FirstClassPassenger pq => pq.AirMiles switch
+        {
+            > 35_000 => 1_500m,
+            > 15_000 => 1_750m,
+            _ => 2_050m,
+        },
         BussinessClassPassenger _ => 1_000M,
         CoachClassPassenger pq when pq.CarryOnKG < 10.0 => 500M,
         CoachClassPassenger _ => 500M,
         _ => 800M,
+
+        /* can also be used like this relational pattern in combination with property pattern
+        FirstClassPassenger { AirMiles: > 35000 } => 1500M,
+        FirstClassPassenger { AirMiles: > 15000 } => 1750M,
+        FirstClassPassenger => 2000M,
+        */
     };
     WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
