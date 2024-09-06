@@ -394,3 +394,11 @@ foreach (Passenger passenger in passengers)
     WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
 #endregion
+
+#region Working with record types "Init" only properties
+ImmutablePerson jeff = new(){
+    FirstName = "Jeff",
+    LastName = "Winger"
+};
+//jeff.FirstName = "Geoff";
+#endregion
