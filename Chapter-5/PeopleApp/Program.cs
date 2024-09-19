@@ -402,3 +402,15 @@ ImmutablePerson jeff = new(){
 };
 //jeff.FirstName = "Geoff";
 #endregion
+
+#region Defining Record Types
+ImmutableVechile car = new(){
+    Brand = "Mercedes",
+    Color = "Red",
+    Wheels = "4",
+};
+
+ImmutableVechile repaintedCar = car with {Color="green"};
+WriteLine($"Original Car Color: {car.Color}");
+WriteLine($"New Car Color: {repaintedCar.Color}");
+#endregion
