@@ -396,21 +396,33 @@ foreach (Passenger passenger in passengers)
 #endregion
 
 #region Working with record types "Init" only properties
-ImmutablePerson jeff = new(){
-    FirstName = "Jeff",
-    LastName = "Winger"
-};
+ImmutablePerson jeff = new() { FirstName = "Jeff", LastName = "Winger" };
 //jeff.FirstName = "Geoff";
 #endregion
 
 #region Defining Record Types
-ImmutableVechile car = new(){
-    Brand = "Mercedes",
-    Color = "Red",
-    Wheels = "4",
-};
+ImmutableVechile car =
+    new()
+    {
+        Brand = "Mercedes",
+        Color = "Red",
+        Wheels = "4",
+    };
 
-ImmutableVechile repaintedCar = car with {Color="green"};
+ImmutableVechile repaintedCar = car with { Color = "green" };
 WriteLine($"Original Car Color: {car.Color}");
 WriteLine($"New Car Color: {repaintedCar.Color}");
+#endregion
+
+#region Equality in Record  
+AnimalName an1 = new() { Name = "Cat" };
+AnimalName an2 = new() { Name = "Cat" };
+
+WriteLine($"an1 == an2 : {an1 == an2}");
+
+CarName cn1 = new() { Name = "Volvo" };
+CarName cn2 = new() { Name = "Volvo" };
+
+WriteLine($"cn1 == cn2 : {cn1 == cn2}");
+
 #endregion
